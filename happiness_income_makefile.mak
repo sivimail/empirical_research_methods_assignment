@@ -1,5 +1,12 @@
 STATA = stata -b do
 
+data/derived/income.dta: code/2_clean_pwt_data.do data/raw/pwt/pwt100.dta
+	mkdir -p $(dir $@)
+	$(STATA) $^ $@
+data/derived/happiness.dta: code/1_import_and_clean_gallup_data.do data/raw/gallup/DataPanelWHR2021C2.xls
+	mkdir -p $(dir $@)
+	$(STATA) $^ $@
+
 data/raw/pwt/pwt100.dta: 
 	mkdir -p $(dir $@)
 	curl -Lo $@ "https://www.rug.nl/ggdc/docs/pwt100.dta"
