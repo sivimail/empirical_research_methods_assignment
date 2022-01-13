@@ -4,7 +4,7 @@ results/tables/IV_regression.txt: code/4_analysis.do data/final/happiness_income
 	mkdir -p $(dir $@)
 	$(STATA) $^ $@
 
-data/final/happiness_income.dta: code/3_combine_data.do data/derived/happiness.dta data\derived\income.dta
+data/final/happiness_income.dta: code/3_combine_data.do data/derived/happiness.dta data/derived/income.dta
 	mkdir -p $(dir $@)
 	$(STATA) $^ $@
 
