@@ -1,5 +1,5 @@
 # Overview
-This repository contains data and code for the project for the course Empirical Research Methods
+This repository contains data and code (including makefile) for the project for the course Empirical Research Methods.
 
 ## Data Sources
 
