@@ -1,6 +1,6 @@
 STATA = StataMP-64 -b do
 
-data/final/happiness_income.dta: code/4_analysis.do data/final/happiness_income.dta
+results/tables/IV_regression.txt: code/4_analysis.do data/final/happiness_income.dta
 	mkdir -p $(dir $@)
 	$(STATA) $^ $@
 
