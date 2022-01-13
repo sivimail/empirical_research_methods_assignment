@@ -1,6 +1,3 @@
-# empirical_research_methods_assignment
-for class
-
 # Overview
 This repository contains data and code for the project for the course Empirical Research Methods
 
