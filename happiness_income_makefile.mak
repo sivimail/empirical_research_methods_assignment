@@ -1,6 +1,10 @@
-STATA = stata -b do
+STATA = StataMP-64 -b do
 
-data\final\happiness_income.dta: code/3_combine_data.do data\derived\happiness.dta data\derived\income.dta
+data/final/happiness_income.dta: code/4_analysis.do data/final/happiness_income.dta
+	mkdir -p $(dir $@)
+	$(STATA) $^ $@
+
+data/final/happiness_income.dta: code/3_combine_data.do data/derived/happiness.dta data\derived\income.dta
 	mkdir -p $(dir $@)
 	$(STATA) $^ $@
 
@@ -19,4 +23,4 @@ data/raw/gallup/DataPanelWHR2021C2.xls:
 	curl -Lo $@ "https://happiness-report.s3.amazonaws.com/2021/DataPanelWHR2021C2.xls"
 
 install:
-	stata -b ssc install outreg2
+	StataMP-64 -b ssc install outreg2
